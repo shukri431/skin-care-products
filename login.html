@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>skincare-catalog</span>
+            </div>
+
+            <ul class="nav-pgs">
+                <li class="nav-pg"><a href="index.html" class="nav-link active">Home</a></li>
+                 <li class="nav-pg actions"><a href="About-us.html" class="nav-link">About us</a></li>
+                <li class="nav-pg actions"><a href="products.html" class="nav-link">products</a></li>
+                <li class="nav-pg actions"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-pg actions"><a href="Login.html" class="nav-link">Login</a></li>
+                <li class="nav-pg actions signup-link-wrapper"><a href="sign-up.html" class="nav-link">Signup</a></li>
+                
+
+                <li class="nav-pg nav-user-info" style="display: none;"></li>
+
+                <li class="nav-pg logged-in-action" style="display: none;"></li>
+            </ul>
+                 <li class="nav-pg nav-user-info" style="display: none;"></li>
+                   <span class="menu-toggle"><i class="fas fa-bars"></i></span>
+                 <!-- Inside .nav-container -->
+    
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+      <section class="auth-section">
+        <div class="container-auth-background-container">
+            <div class="auth-container">
+                
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>Welcome Back</h1>
+                        <p>Login to continue your exclusive journey.</p>
+                    </div>
+
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Password" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary auth-btn">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+
+                        <div class="auth-footer">
+                            <p>Don't have an account? <a href="sign-up.html" class="auth-link">Sign Up here</a></p>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="auth-image">
+                    <img src="./images/sight3" >
+                  
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
