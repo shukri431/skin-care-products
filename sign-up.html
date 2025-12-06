@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Skincare Catalog</title>
+    <link rel="stylesheet" href="./css/sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>skincare-catalog</span>
+            </div>
+
+            <ul class="nav-pgs">
+                <li class="nav-pg"><a href="index.html" class="nav-link active">Home</a></li>
+                 <li class="nav-pg actions"><a href="About-us.html" class="nav-link">About us</a></li>
+                <li class="nav-pg actions"><a href="products.html" class="nav-link">products</a></li>
+                <li class="nav-pg actions"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-pg actions"><a href="Login.html" class="nav-link">Login</a></li>
+                <li class="nav-pg actions signup-link-wrapper"><a href="sign-up.html" class="nav-link">Signup</a></li>
+                
+
+                <li class="nav-pg nav-user-info" style="display: none;"></li>
+
+                <li class="nav-pg logged-in-action" style="display: none;"></li>
+            </ul>
+                 <!-- <li class="nav-pg nav-user-info" style="display: none;"></li>
+                   <span class="menu-toggle"><i class="fas fa-bars"></i></span> -->
+                 <!-- Inside .nav-container -->
+    
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sign Up Section -->
+    <section class="signup-section">
+        <div class="container">
+            <div class="signup-content">
+                <!-- Sign Up Form -->
+                <div class="signup-form">
+                    <div class="form-header">
+                        <h1>Create Account</h1>
+                        <p>Join our skincare community and discover your perfect routine.</p>
+                    </div>
+
+                    <form id="signupForm" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Create password" required>
+                                <i class="fas fa-eye toggle-password" data-target="password"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+                                <i class="fas fa-eye toggle-password" data-target="confirmPassword"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" class="link">Terms of Service</a> and <a href="#" class="link">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary signup-btn">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+
+                        <div class="auth-footer">
+                            <p>Already have an account? <a href="login.html" class="auth-link">Sign In here</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sign Up Image -->
+                <div class="signup-image">
+                    <div class="image-content">
+                        <h2>Welcome to Our Community</h2>
+                        <p>Discover premium skincare products tailored to your unique needs. Join thousands of satisfied customers who trust our expertise.</p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <span>Natural Ingredients</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Dermatologist Tested</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart"></i>
+                                <span>Cruelty Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+</body>
+</html>
