@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - STE. ANNE'S SKIN NOURISHMENT</title>
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>skincare-catalog</span>
+            </div>
+            <ul class="nav-pgs">
+                <li class="nav-pg"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-pg"><a href="About-us.html" class="nav-link">About us</a></li>
+                <li class="nav-pg"><a href="products.html" class="nav-link active">Products</a></li>
+                <li class="nav-pg"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-pg"><a href="login.html" class="nav-link">Login</a></li>
+                <li class="nav-pg"><a href="sign-up.html" class="nav-link">Signup</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-details">
+        <div class="container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="./images/daycream.jpeg" alt="Day Cream" id="main-product-image">
+                </div>
+                <div class="thumbnail-gallery">
+                    <img src="./images/daycream.jpeg" alt="Day Cream View 1" class="thumbnail active" onclick="changeImage('./images/daycream.jpeg')">
+                    <img src="./images/firmingcream.jpeg" alt="Day Cream View 2" class="thumbnail" onclick="changeImage('./images/firmingcream.jpeg')">
+                    <img src="./images/gelcleanser.jpeg" alt="Day Cream View 3" class="thumbnail" onclick="changeImage('./images/gelcleanser.jpeg')">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1 class="product-title">Hydrating Day Cream</h1>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(4.5) 120 reviews</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">$40.00</span>
+                    <span class="original-price">$50.00</span>
+                    <span class="discount">20% OFF</span>
+                </div>
+                <p class="product-description">
+                    Experience the ultimate hydration with our premium day cream. Formulated with natural ingredients including aloe vera, hyaluronic acid, and vitamin E, this cream provides deep moisture, protects against environmental stressors, and leaves your skin feeling soft and radiant throughout the day.
+                </p>
+                <div class="product-benefits">
+                    <h3>Key Benefits:</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Deep hydration for all day comfort</li>
+                        <li><i class="fas fa-check"></i> SPF 30 protection</li>
+                        <li><i class="fas fa-check"></i> Non-comedogenic formula</li>
+                        <li><i class="fas fa-check"></i> Suitable for all skin types</li>
+                    </ul>
+                </div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn" onclick="decreaseQty()">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                        <button class="qty-btn" onclick="increaseQty()">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <button class="wishlist-btn">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Free shipping on orders over $50</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-undo"></i>
+                        <span>30-day return policy</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>100% authentic products</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Tabs Section -->
+    <section class="product-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('description')">Description</button>
+                <button class="tab-btn" onclick="openTab('ingredients')">Ingredients</button>
+                <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+                <button class="tab-btn" onclick="openTab('how-to-use')">How to Use</button>
+            </div>
+            <div id="description" class="tab-content active">
+                <h3>Product Description</h3>
+                <p>Our Hydrating Day Cream is crafted with the finest natural ingredients to provide your skin with the nourishment it deserves. The unique blend of botanical extracts works synergistically to hydrate, protect, and rejuvenate your skin.</p>
+                <p>Perfect for daily use, this cream absorbs quickly without leaving a greasy residue, making it ideal for all skin types including sensitive skin.</p>
+            </div>
+            <div id="ingredients" class="tab-content">
+                <h3>Ingredients</h3>
+                <p><strong>Key Ingredients:</strong></p>
+                <ul>
+                    <li><strong>Aloe Vera:</strong> Soothes and hydrates the skin</li>
+                    <li><strong>Hyaluronic Acid:</strong> Retains moisture and plumps the skin</li>
+                    <li><strong>Vitamin E:</strong> Antioxidant protection</li>
+                    <li><strong>Green Tea Extract:</strong> Anti-inflammatory properties</li>
+                    <li><strong>Shea Butter:</strong> Nourishes and softens</li>
+                </ul>
+            </div>
+            <div id="reviews" class="tab-content">
+                <h3>Customer Reviews</h3>
+                <div class="review">
+                    <div class="review-header">
+                        <span class="reviewer-name">Sarah M.</span>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p>"Absolutely love this day cream! My skin feels so hydrated and looks radiant. Will definitely repurchase."</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <span class="reviewer-name">Emily R.</span>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p>"Great product, absorbs quickly and doesn't clog pores. The scent is lovely too."</p>
+                </div>
+            </div>
+            <div id="how-to-use" class="tab-content">
+                <h3>How to Use</h3>
+                <ol>
+                    <li>Cleanse your face thoroughly</li>
+                    <li>Apply a pea-sized amount to your face and neck</li>
+                    <li>Gently massage in circular motions until fully absorbed</li>
+                    <li>Use morning and/or evening for best results</li>
+                    <li>Follow with sunscreen during the day</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="related-products">
+        <div class="container">
+            <h2>You Might Also Like</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <img src="./images/firmingcream.jpeg" alt="Firming Cream">
+                    <h3>Firming Night Cream</h3>
+                    <span>$45.00</span>
+                </div>
+                <div class="related-card">
+                    <img src="./images/gelcleanser.jpeg" alt="Gel Cleanser">
+                    <h3>Gentle Gel Cleanser</h3>
+                    <span>$25.00</span>
+                </div>
+                <div class="related-card">
+                    <img src="./images/daycream.jpeg" alt="Eye Cream">
+                    <h3>Revitalizing Eye Cream</h3>
+                    <span>$35.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-logo-social">
+                    <img src="./images/flower.jpg" alt="STE. ANNE'S SKIN NOURISHMENT Logo">
+                </div>
+                <div class="footer-links">
+                    <a href="#">Become a Retailer</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copy">
+                    © 2025 STE. ANNE'S SPA. ALL RIGHTS RESERVED. SITE BY THEY
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
