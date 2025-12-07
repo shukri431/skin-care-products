@@ -1,53 +1,47 @@
+/* --- 1. FONTS & RESET --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 :root {
   /* Base Background */
-  --bg-main: #f5f1ee;        /* Soft beige background */
-
+  --bg-main: #f5f1ee;
+  
   /* Text Colors */
-  --text-main: #2e2e2e;      /* Deep neutral black */
-  --text-heading: #1f1e1d;   /* Slightly darker for titles */
-  --text-light: #6f6b67;     /* Light gray text */
+  --text-main: #2e2e2e;
+  --text-heading: #1f1e1d;
+  --text-light: #6f6b67;
 
   /* Accent Colors */
-  --accent-terra: #c96e5a;   /* Terracotta (buttons, highlights) */
-  --accent-terra-dark: #b55f4f;  /* Darker terracotta */
+  --accent-terra: #c96e5a;
+  --accent-terra-dark: #b55f4f;
 
-  /* Neutral / Brown Shades */
-  --brown-soft: #a47d67;     /* Soft warm brown */
-  --brown-medium: #8a6b56;   /* Medium brown */
-  --brown-dark: #5a4538;     /* Dark brown elements */
+  /* Brown Shades */
+  --brown-soft: #a47d67;
+  --brown-medium: #8a6b56;
+  --brown-dark: #5a4538;
 
-  /* Card / Box Background */
-  --card-bg: #ffffff;        /* Clean white */
-
-  /* Lines / Borders */
-  --line-color: #e6ddd8;     /* Light border lines */
-
-  /* Optional Warm Gold (for highlights) */
-  --gold-warm: #d7b08a;
-
+  /* Components */
+  --card-bg: #ffffff;
+  --line-color: #e6ddd8;
+  
   /* Buttons */
-  --btn-bg: #c96e5a;         /* Terracotta (primary button) */
+  --btn-bg: #c96e5a;
   --btn-bg-hover: #b55f4f;
   --btn-text: #ffffff;
 }
-@font-face{
-    font-family: "poppins";
-    src:url(./Bricolage_Grotesque\,Poppins/);
-}
-@font-face {
-  font-family: "poppins2";
-  src: url(./Bricolage_Grotesque\,Cossette_Texte\,Dancing_Script\,Playwrite_US_Trad_Guides\,Poppins/);
-}
-body{
+
+body {
     background-color: var(--bg-main);
+    font-family: "Poppins", sans-serif; /* Applied globally */
+    overflow-x: hidden;
 }
+
+/* --- 2. NAVBAR --- */
 .navbar {
   position: fixed;
   top: 0;
@@ -58,9 +52,7 @@ body{
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   z-index: 1000;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 50px;
-   margin-bottom: 2%;
+  height: 80px;
 }
 
 .nav-container {
@@ -70,99 +62,21 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  position: relative;
+  height: 100%;
 }
-
-/* Theme Toggle Button */
-.theme-toggle {
-  background: none;
-  border: none;
-  color: var(--yellow-color);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  margin-left: 20px;
-}
-
-
-.theme-toggle:hover {
-  background: rgba(241, 214, 35, 0.1);
-  transform: scale(1.1);
-}
-
-.theme-toggle i {
-  transition: transform 0.3s ease;
-}
-
-.theme-toggle:hover i {
-  transform: rotate(360deg);
-}
-
 
 .nav-logo {
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: var(--text-heading);
-  text-decoration: none;
-  font-family: "poppins";
-  letter-spacing: -0.5px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.nav-logo:hover {
-  transform: scale(1.05);
-  color: var(--accent-terra);
-}
-
-.nav-logo::before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-terra), var(--brown-dark));
-  transition: width 0.3s ease;
-  border-radius: 2px;
-}
-
-.nav-logo:hover::before {
-  width: 100%;
-}
-
-.nav-logo i {
-  margin-right: 12px;
-  font-size: 1.2rem;
-  color: var(--accent-terra);
-  transition: transform 0.3s ease;
-}
-
-.nav-logo:hover i {
-  transform: rotate(10deg);
+  cursor: pointer;
 }
 
 .nav-pgs {
   display: flex;
   list-style: none;
-  gap: 2.5rem;
-  margin-right: 2%;
-  margin-left: 18%;
+  gap: 2rem;
   align-items: center;
-}
-
-.nav-pgs li {
-  position: relative;
 }
 
 .nav-link {
@@ -170,144 +84,106 @@ body{
   color: var(--text-main);
   font-weight: 600;
   font-size: 1rem;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 8px 16px;
   border-radius: 8px;
-  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover, .nav-link.active {
   color: var(--accent-terra);
   background: rgba(201, 110, 90, 0.1);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(201, 110, 90, 0.2);
 }
 
-.nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-terra), var(--brown-dark));
-  transition: all 0.3s ease;
-  border-radius: 2px;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover::before,
-.nav-link.active::before {
-  width: 80%;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(201, 110, 90, 0.05), rgba(164, 125, 103, 0.05));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 8px;
-  z-index: -1;
-}
-
-.nav-link:hover::after {
-  opacity: 1;
-}
-
-/* Mobile Navigation */
+/* Mobile Menu Toggle */
 .menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-main);
+  display: none; /* Hidden on desktop */
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 10px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  margin-left: 15px;
+  color: var(--text-heading);
 }
 
-.menu-toggle:hover {
-  background: rgba(201, 110, 90, 0.1);
-  color: var(--accent-terra);
-  transform: scale(1.1);
-}
-
-.menu-toggle i {
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle.active i {
-  transform: rotate(90deg);
-}
-/* section-ka 2aad style */
-section.made{
+/* --- 3. HERO SECTION (Fixed Centering) --- */
+section.made {
     width: 100%;
-    height: 100%;
-    margin-top: 9%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 120px 20px 40px; /* Account for fixed navbar */
+    text-align: center; /* This centers everything perfectly */
 }
-section.made div.container h2{
-    padding-left: 39%;
+
+section.made div.container h2 {
     font-size: 38px;
     color: var(--brown-dark);
-}
-section.made div.container p{
-      font-family: "poppins";
-    color: var(--text-main);                
-    font-size: 24px; 
-    line-height: 27px;             
-    text-align: center;
-    max-width: 900px;              
-  
-    /* margin: 2.25rem auto;  */
-}
-section.made div.container button{
-    margin-left: 40%;
-    margin-top: 3%;
-    display: inline-block;
-        background: var(--btn-bg);
-        color: var(--btn-text);
-        padding: 15px 40px;
-        border-radius: 25px;
-        font-size: 16px;
-        font-weight: 600;
-        font-family: "poppins";
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-}
-section.made div.container button:hover{
-    background-color: var(--btn-bg-hover);
+    margin-bottom: 20px;
 }
 
-/* Product Cards Section */
+section.made div.container p {
+    color: var(--text-main);                
+    font-size: 18px; 
+    line-height: 1.6;             
+    max-width: 800px;              
+    margin: 0 auto 30px auto; /* Centers the paragraph block */
+}
+
+section.made button {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+section.made button:hover {
+    background-color: var(--btn-bg-hover);
+    transform: translateY(-3px);
+}
+
+/* --- 4. FILTER SECTION (NEW - Required for JS) --- */
+.filter-section {
+    background: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.filter-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.filter-section input, 
+.filter-section select {
+    padding: 12px 20px;
+    border: 1px solid var(--line-color);
+    border-radius: 25px;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-main);
+    background: var(--bg-main);
+}
+
+.filter-section input:focus,
+.filter-section select:focus {
+    border-color: var(--accent-terra);
+}
+
+/* --- 5. PRODUCT CARDS --- */
 .section-3aad {
-    padding: 60px 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--bg-main);
 }
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive Grid */
     gap: 30px;
-    justify-content: center;
     max-width: 1200px;
     width: 100%;
 }
@@ -315,133 +191,165 @@ section.made div.container button:hover{
 .card {
     background-color: var(--card-bg);
     border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    display: block;
 }
 
 .card-content {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     text-align: center;
 }
 
 .card-content h2 {
-    font-family: "poppins";
-    font-size: 24px;
+    font-size: 20px;
     color: var(--brown-dark);
-    margin-bottom: 10px;
-    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .card-content p {
-    font-family: "poppins";
-    font-size: 16px;
-    color: var(--text-main);
-    line-height: 1.5;
+    font-size: 14px;
+    color: var(--text-light);
     margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .card-content span {
-    font-family: "poppins";
-    font-size: 20px;
+    display: block;
+    font-size: 18px;
     color: var(--accent-terra);
     font-weight: bold;
+    margin-bottom: 10px;
 }
- /* --- Footer --- */
-    footer {
-        background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
-        color: var(--btn-text);
-        padding: 60px 20px 40px;
-        margin-top: 50px;
-        font-family: "poppins";
+
+/* Add to Cart Button (From JS) */
+.add-to-cart-btn, .add-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--brown-dark);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-to-cart-btn:hover, .add-btn:hover {
+    background: var(--accent-terra);
+}
+
+.rating-display {
+    color: #f1c40f; /* Star color */
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* --- 6. FOOTER --- */
+footer {
+    background: linear-gradient(135deg, var(--brown-dark) 0%, var(--brown-medium) 100%);
+    color: #fff;
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-logo-social img {
+    height: 60px;
+    border-radius: 50%; /* Makes logo circular if square */
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- 7. RESPONSIVE DESIGN (Mobile) --- */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger on mobile */
     }
 
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-bottom: 40px;
-    }
-
-    .footer-logo-social {
-        display: flex;
+    .nav-pgs {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-main);
         flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+        padding: 20px;
+        border-bottom: 1px solid var(--line-color);
+        /* Hidden by default, JS toggles class 'active' */
+        display: none; 
     }
 
-    .footer-logo-social img {
-        height: 80px;
-        object-fit: contain;
-    }
-    .footer-links {
+    .nav-pgs.active {
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        flex: 1;
-        max-width: 600px;
     }
 
-    .footer-links a {
-        color: var(--btn-text);
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-        color: var(--accent-terra);
-    }
-
-    .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-top: 40px;
+    .nav-pgs li {
+        width: 100%;
         text-align: center;
     }
 
-    .copy {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 20px;
+    section.made div.container h2 {
+        font-size: 28px;
     }
 
-    .logo-row {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 40px;
+    .filter-section .container {
+        flex-direction: column;
     }
-
-    .logo-row img {
-        height: 60px;
-        object-fit: contain;
-        opacity: 0.8;
-        transition: opacity 0.3s ease;
+    
+    .filter-section input, 
+    .filter-section select {
+        width: 100%;
     }
-
-    .logo-row img:hover {
-        opacity: 1;
-    }
+}
