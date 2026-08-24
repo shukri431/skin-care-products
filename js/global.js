@@ -28,7 +28,7 @@ function initAppState() {
         }
     }
     
-    // Initialize theme
+    
     initTheme();
 }
 
